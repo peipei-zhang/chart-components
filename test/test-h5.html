@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<title>H5</title>
+	<link rel="stylesheet" type="text/css" href="../css/h5.css">
+	<script type="text/javascript" src="../js/libs/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/libs/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/libs/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+	<script type="text/javascript" src="../js/h5.js"></script>
+	<style>
+		body,html{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 测试内容组织功能，以及fullpage页面切换&组件 -->
+
+	<script type='text/javascript'>
+		$(function(){
+			var h5=H5();
+			h5
+			.addPage("face")
+			.addComponent('logo',{
+				text:'logo',
+				width:400,
+				height:100,
+				css:{
+                  backgroundColor:'red',
+                  opacity:0,
+                  top:0
+				},
+				center:true,
+                animateIn:{
+                	opacity:1,
+                	top:200
+                },
+                animateOut:{
+                	opacity:0,
+                	top:240
+                }
+			})
+			.addComponent('slogan',{
+				text:'slogan',
+				width:400,
+				height:100,
+				css:{
+                  backgroundColor:'red',
+                  top:300
+				},
+				center:true
+			})
+			.addPage("desc")
+			.addComponent('caption',{
+				text:'核心理念',
+				width:400,
+				height:100,
+				css:{
+                  backgroundColor:'red',
+                  top:100,
+                  opacity:0
+				},
+				 animateIn:{
+                	opacity:1,
+                	top:200
+                },
+                animateOut:{
+                	opacity:0,
+                	top:100
+                },
+				center:true
+			})
+			.addPage("page-3")
+			.addComponent('caption',{
+				text:'课程分布方向',
+				width:400,
+				height:100,
+				css:{
+                  backgroundColor:'red',
+                  top:200
+				},
+				center:true
+			})
+			.loader()
+		})
+	</script>
+</body>
+</html>

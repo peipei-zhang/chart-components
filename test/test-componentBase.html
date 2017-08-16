@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<title>学习情况</title>
+	<style>
+		body,html{
+			margin:0;
+			padding:0;
+			background-color:#000;
+			font-size: 12px;
+		}
+		.iphone{
+			width:340px;
+			height: 540px;
+			background-color: #fff;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -270px 0 0 -170px;
+		}
+	</style>
+	<link rel="stylesheet" href="../css/H5ComponentBase.css">
+	<script type="text/javascript" src="../js/libs/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+</head>
+<body>
+	<!-- 用于开发测试 H5 ComponentBase 对象   基本的饿图文组件 -->
+	<div class="iphone">
+		
+	</div>
+	<script type="text/javascript">
+	    //配置参数
+	    var cfg={
+	    	type:"base",
+	    	bg:"../img/people.png",
+	    	text:'text',
+	    	width:514,
+	    	height:306,
+	    	css:{
+	    		bottom:0,
+	    		opacity:0
+	    	},
+	    	animateIn:{
+	    		bottom:80,
+	    		opacity:1
+	    	},
+	    	animateOut:{
+	    		bottom:0,
+	    		opacity:0
+	    	},
+	    	center:true
+	    }
+		//生成实例
+		var h5=new H5ComponentBase("myname",cfg);
+		$(".iphone").append(h5);
+        //灰色
+        var cfg_g={
+		  width:500,
+          height:100,
+          type:'base',
+          text:'我是原始，top:100px,height:50px',
+          css:{
+          	top:100,
+          	backgroundColor:"grey"
+          },
+          center:true
+		}
+		var h5_g=H5ComponentBase('grey',cfg_g)
+        $(".iphone").append(h5_g);
+        //粉色
+		var cfg_p={
+	      type:'base',
+	      text:'新组件，top:100px,height:50',
+		  width:500,
+          height:100,
+          css:{
+          	top:100,
+          	backgroundColor:"pink"
+          },
+          center:true,
+          relativeTo:"grey"
+		}
+		var h5_p=H5ComponentBase('pink',cfg_p)
+        $(".iphone").append(h5_p);
+        var leave=true;
+		$("body").click(function(){
+			leave=!leave;
+            if(leave){
+            	$(".h5_component").trigger("onLeave");
+            }else{
+            	$(".h5_component").trigger("onLoad");
+            }
+		})
+	</script>
+</body>
+</html>

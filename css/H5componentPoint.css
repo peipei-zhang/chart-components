@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*散点图样式*/
+.h5_c_point .point {
+  display: block;
+  position: absolute;
+  border-radius: 50%; }
+
+.h5_c_point .name {
+  color:white;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 22px; }
+
+.h5_c_point .per {
+  font-size: 0.5em; }
+
+/*# sourceMappingURL=H5componentPoint.css.map */

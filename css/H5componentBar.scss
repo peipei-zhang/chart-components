@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*柱图基本样式*/
+.h5_c_bar .line{
+	height:15px;
+	font-size:12px;
+	line-height: 15px;
+	margin-bottom:15px;
+	padding-left:60px;
+	padding-right:20px;
+}
+.h5_c_bar .name{
+	width:60px;
+	margin-left: -60px;
+	float:left;
+	color:#000;
+	text-align:center;
+}
+%transition1{
+	-webkit-transition: all 1s 0.5s;
+	transition: all 1s 0.5s;
+}
+%transition2{
+	-webkit-transition: all 1s 1.5s;
+	transition: all 1s 1.5s;
+}
+.h5_c_bar .rate{
+	height: 15px;
+	margin-left: 5px;
+	float: left;
+	position: relative;
+	& .bg{
+		background-color: #99c0ff;
+		width:0;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		@extend %transition1;
+	}
+}
+.h5_c_bar .peer{
+	color:#99c0ff;
+	width:20px;
+	float: left;
+	margin-left:5px;
+	margin-right:-20px;
+	opacity:0;
+	@extend %transition2;
+}
+.h5_c_bar_load .rate .bg{
+	width:100%;
+}
+.h5_c_bar_leave .rate .bg{
+	width:0; 
+}
+.h5_c_bar_load .peer{
+   opacity: 1;
+}
+.h5_c_bar_leave .peer{
+  opacity: 0;
+}
